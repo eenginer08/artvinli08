@@ -1,0 +1,451 @@
+print("""
+
+***** Tahmin Oyunu *****
+
+Merhabalar, tahmin oyununa hoşgeldiniz,
+
+Öncelik olarak bir zorluk seviyesi seçiniz,
+
+***Çoklu Oyuncu 2-4***
+
+1.Seviye - 0 ile 100 arası / 7 tahmin hakkı / 5 olan kazanır
+
+2.Seviye - 0 ile 100 arası / 6 tahmin hakkı / 4 olan kazanır
+
+3.Seviye - 0 ile 90 arası / 6 tahmin hakkı / 3 olan kazanır
+
+4.Seviye - 0 ile 90 arası / 5 tahmin hakkı / 3 olan kazanır
+
+5.Seviye - 0 ile 85 arası / 4 tahmin hakkı / 2 olan kazanır
+
+6.Seviye - 0 ile 80 arası / 3 tahmin hakkı / 1 olan kazanır
+
+7.Seviye - 0 ile 50 arası / 1 tahmin hakkı / 1 olan kazanır
+
+Boş Şanslar :)
+
+
+""")
+
+import random   ## Ramdom Kütüphanesini Programa Ekliyoruz
+
+while True :    ## Oyunu başlamadan önce girilecek olan döngü
+
+    zor = input("Lütfen 1 ile 7 Arasında Zorluk Seviyesi Giriniz")  ## Kullanıcıdan Zorluk Seviyesi Seçmesini İsyioruz
+
+    if (zor == "1"):    ## Zorluk Seviyesi 1 ise Oynatılacak Döngü
+
+        tahmin = 7  ## Oyuncuların Tahmin Hakları
+        sonuc = 5   ## Oyuncun bitiş değeri
+        sayi2 = 100 ## Max sayı değeri
+        print("\n*** Seçilen Özellikler ***\nTahmin : {}\nSayı : 0 ile 100 Arası\nBitiş {}\n".format(tahmin,sonuc)) ## Seçilen Özelliklerin gösterildiği kısım
+        break   ## While döngüsünden çıkış
+
+    elif (zor == "2"):  ## Zorluk Seviyesi 2 ise Oynatılacak Döngü Aşağıdaki işlemler 1. döngü ile aynı
+
+        tahmin = 6
+        sonuc = 4
+        sayi2 = 100
+        print("\n*** Seçilen Özellikler ***\nTahmin : {}\nSayı : 0 ile 100 Arası\nBitiş {}\n".format(tahmin,sonuc))
+        break
+
+    elif (zor == "3"):  ## Zorluk Seviyesi 3 ise Oynatılacak Döngü Aşağıdaki işlemler 1. döngü ile aynı
+
+        tahmin = 6
+        sonuc = 3
+        sayi2 = 90
+        print("\n*** Seçilen Özellikler ***\nTahmin : {}\nSayı : 0 ile 90 Arası\nBitiş {}\n".format(tahmin,sonuc))
+        break
+
+    elif (zor == "4"):  ## Zorluk Seviyesi 4 ise Oynatılacak Döngü Aşağıdaki işlemler 1. döngü ile aynı
+
+        tahmin = 5
+        sonuc = 3
+        sayi2 = 90
+        print("\n*** Seçilen Özellikler ***\nTahmin : {}\nSayı : 0 ile 90 Arası\nBitiş {}\n".format(tahmin,sonuc))
+        break
+
+    elif (zor == "5"):  ## Zorluk Seviyesi 5 ise Oynatılacak Döngü Aşağıdaki işlemler 1. döngü ile aynı
+
+        tahmin = 4
+        sonuc = 2
+        sayi2 = 85
+        print("\n*** Seçilen Özellikler ***\nTahmin : {}\nSayı : 0 ile 85 Arası\nBitiş {}\n".format(tahmin,sonuc))
+        break
+
+    elif (zor == "6"):  ## Zorluk Seviyesi 6 ise Oynatılacak Döngü Aşağıdaki işlemler 1. döngü ile aynı
+
+        tahmin = 3
+        sonuc = 1
+        sayi2 = 80
+        print("\n*** Seçilen Özellikler ***\nTahmin : {}\nSayı : 0 ile 80 Arası\nBitiş {}\n".format(tahmin,sonuc))
+        break
+
+    elif (zor == "7"):  ## Zorluk Seviyesi 7 ise Oynatılacak Döngü Aşağıdaki işlemler 1. döngü ile aynı
+
+        tahmin = 1
+        sonuc = 1
+        sayi2 = 50
+        print("\n*** Seçilen Özellikler ***\nTahmin : {}\nSayı : 0 ile 80 Arası\nBitiş {}\n".format(tahmin,sonuc))
+        break
+
+    else:   ## Yanlış bir zorluk seviyesi girilirse oynadılacak değer
+        print("Yanlış Giriş Yaptınız Tekrar Giriniz")
+
+while True:
+
+    oyuncu = input("Lütfen 2 ile 4 Arasında Oyuncu Sayısı Giriniz") ## Oyunu oynayacak kişi sayısının seçimi (2 ile 4 kişi)
+
+    if (oyuncu == "2"): ## Eğer 2 girilmiş ise oynatılacak döngü
+
+        Oyuncu1 = input("Oyuncu Adınızı Giriniz")   ## İlk girilen oyuncu ismi
+        Oyuncu2 = input("Oyuncu Adınızı Giriniz")   ## İkinci girilen oyuncu ismi
+
+        ilk_oyuncu_deger = 0    ## İlk oyuncunun başlangıç puanı
+        ikinci_oyuncu_deger = 0 ## İkinci oyuncunun başlangıç puanı
+
+        a = random.randint(0, 1)    ## a değeri için 0 veya 1 olarak rasgele bir değer seçimi
+
+        if (a == 0):    ## Eğer a = 0 olursa oynayacak döngü
+
+            ilk_oyuncu = Oyuncu1    ## İlk oyunu başlayacak oyuncu birinci ismi girilen oyuncu
+            ikinci_oyuncu = Oyuncu2 ## İkinci oynatacak oyuncu ismi ikinci girilen oyuncu
+            break   ## While döngüsünden çıkış
+
+        else:   ## Eğer a = 1 olursa oynayacak döngü
+
+            ilk_oyuncu = Oyuncu2    ## İlk oyunu başlayacak oyuncu ikinci ismi girilen oyuncu
+            ikinci_oyuncu = Oyuncu1 ## İkinci oynatacak oyuncu ismi ilk girilen oyuncu
+            break   ## While döngüsünden çıkış
+
+    elif (oyuncu == "3"):   ## Bu döngü birinci döngü ile aynı mantıkta yanlızca 3 oyuncu girilirse çalışacak
+
+        Oyuncu1 = input("Oyuncu Adınızı Giriniz")
+        Oyuncu2 = input("Oyuncu Adınızı Giriniz")
+        Oyuncu3 = input("Oyuncu Adınızı Giriniz")
+
+        ilk_oyuncu_deger = 0
+        ikinci_oyuncu_deger = 0
+        ucuncu_oyuncu_deger = 0
+
+        a = random.randint(0, 2)
+
+        if (a == 0):
+
+            ilk_oyuncu = Oyuncu1
+            ikinci_oyuncu = Oyuncu2
+            ucuncu_oyuncu = Oyuncu3
+            break
+
+        elif (a == 1):
+
+            ilk_oyuncu = Oyuncu2
+            ikinci_oyuncu = Oyuncu3
+            ucuncu_oyuncu = Oyuncu1
+            break
+
+        else:
+
+            ilk_oyuncu = Oyuncu3
+            ikinci_oyuncu = Oyuncu1
+            ucuncu_oyuncu = Oyuncu2
+            break
+
+    elif (oyuncu == "4"):   ## Bu döngü birinci döngü ile aynı mantıkta yanlızca 4 oyuncu girilirse çalışacak
+
+        Oyuncu1 = input("Oyuncu Adınızı Giriniz")
+        Oyuncu2 = input("Oyuncu Adınızı Giriniz")
+        Oyuncu3 = input("Oyuncu Adınızı Giriniz")
+        Oyuncu4 = input("Oyuncu Adınızı Giriniz")
+
+        ilk_oyuncu_deger = 0
+        ikinci_oyuncu_deger = 0
+        ucuncu_oyuncu_deger = 0
+        dorduncu_oyuncu_deger = 0
+
+        a = random.randint(0, 3)
+
+        if (a == 0):
+
+            ilk_oyuncu = Oyuncu1
+            ikinci_oyuncu = Oyuncu2
+            ucuncu_oyuncu = Oyuncu3
+            dorduncu_oyuncu = Oyuncu4
+            break
+
+        elif (a == 1):
+
+            ilk_oyuncu = Oyuncu2
+            ikinci_oyuncu = Oyuncu3
+            ucuncu_oyuncu = Oyuncu4
+            dorduncu_oyuncu = Oyuncu1
+            break
+
+        elif (a == 2):
+
+            ilk_oyuncu = Oyuncu3
+            ikinci_oyuncu = Oyuncu4
+            ucuncu_oyuncu = Oyuncu1
+            dorduncu_oyuncu = Oyuncu2
+            break
+
+        else:
+
+            ilk_oyuncu = Oyuncu4
+            ikinci_oyuncu = Oyuncu1
+            ucuncu_oyuncu = Oyuncu2
+            dorduncu_oyuncu = Oyuncu3
+            break
+
+    else:   ## Yanlış bir değer girilirse oynayacak olan döngü
+        print("Yanlış Bir Giriş Yaptınız Tekrar Deneyiniz..")
+
+def rand(zor):  ## Bilgisayarın rastgele satı seçeceği aralık seçimi
+
+    if (zor == "1" or zor == "2"):  ## Zorluk seçimi 1 veya 2 seçildiyse işlenecek döngü
+
+        return random.randint(0,100)    ## 0 ile 100 arasında rastgele bir sayı seçimi
+
+    elif (zor == "3" or zor == "4"):    ## Zorluk seçimi 3 veya 4 seçildiyse işlenecek döngü
+
+        return random.randint(0, 90)    ## 0 ile 90 arasında rastgele bir sayı seçimi
+
+    elif (zor == "5"):  ## Zorluk seçimi 5 seçildiyse işlenecek döngü
+
+        return random.randint(0, 85)    ## 0 ile 85 arasında rastgele bir sayı seçimi
+
+    elif (zor == "6"):  ## Zorluk seçimi 6 seçildiyse işlenecek döngü
+
+        return random.randint(0, 80)    ## 0 ile 80 arasında rastgele bir sayı seçimi
+
+    elif (zor == "7"):  ## Zorluk seçimi 7 seçildiyse işlenecek döngü
+
+        return random.randint(0, 50)    ## 0 ile 50 arasında rastgele bir sayı seçimi
+
+def tahmin_oyunu_1(tahmin,sayi,sayi2):  ## Ana oyunun oynandığı kısım
+
+    while True: ## Sürekli oynayacak döngü
+
+        if (tahmin != 0):   ## Tahmin hakkınız 0 değilse oynayacak döngü
+
+            print("Tahmin Hakkınız :", tahmin)  ## Kalan tahmin hakkının kullanıcıya gösterimi
+
+            giris = input("Lüften 0 ile {} Arasında Tahmininizi Giriniz".format(sayi2)) ## Kullanıcıdan bir tahmin değeri girişi
+
+            if (int(giris) > sayi): ## Eğer kullanıcının girdiği değer bilgisayarın değerinden büyükse çalışacak döngü
+
+                print("Tahmin Sayısı {} Sayısından Küçüktür".format(giris)) ## Tahmin edilecek sayının daha küçük olduğunun kullanıcıya aktarımı
+                tahmin -= 1 ## Tahmin hakkının bir azalması ve while döngüsünün başına dönüş
+
+            elif (int(giris) < sayi):   ## Eğer kullanıcının girdiği değer bilgisayarın değerinden küçükse çalışacak döngü
+
+                print("Tahmin Sayısı {} Sayısından Büyüktür".format(giris)) ## Tahmin edilecek sayının daha büyük olduğunun kullanıcıya aktarımı
+                tahmin -= 1 ## Tahmin hakkının bir azalması ve while döngüsünün başına dönüş
+
+            elif (int(giris) == sayi):  ## Eğer kullanıcının girdiği değer bilgisayarın değerine eşitse çalışacak döngü
+
+                print("Tebrikler Turu Kazandınız..")    ## Kullanıcının turu kazandığı bilgisinin aktarımı
+                return "Kazandınız" ## Ana oyundan kazandınız olarak bilgi dönüşü
+
+            else:   ## Yanlış bir değer girilirse oynatılacak döngü
+                print("Yanlış Bir Giriş Yaptınız Tekrar Deneyiniz.")    ## Kullanıcıya yanlış değer girdiğinin aktarımı
+
+        else:   ## Tahmin hakkınız 0 ise oynayacak döngü
+
+            print("Giriş Hakkınız Bitmiştir Turu Kaybettiniz\nDoğru Sayı :", sayi)  ## Kullanıcıya oyunun kaybettiğinin aktarımı ve doğru sayının gösterimi
+            return "Kaybettiniz"     ## Ana oyundan kaydettiniz olarak bilgi dönüşü
+
+if (oyuncu == "2"):  ## Eğer oyuncu sayısı 2 ise oynayacak olan döngü
+
+    while(ilk_oyuncu_deger < sonuc and ikinci_oyuncu_deger < sonuc):    ## oyundaki iki oyuncunun puanı da sonuç puanına eşit değilse while döngüsü sürekli tekrar eder
+
+        print("Yarışacak Oyunuc :",ilk_oyuncu)  ## ilk Yarışacak oyuncunun ismi
+        print("\n{} Şuanki Puanını : {}\n".format(ilk_oyuncu,ilk_oyuncu_deger)) ## Oyuncunun güncel puan bilgisi
+        sayi = rand(sayi_secimi)    ## Programın rastgele bir sayı üretmesi için rand fonksiyonunu çağırması
+        sonuc1 = tahmin_oyunu_1(tahmin,sayi,sayi2)  ## Tahmin oyunu 1 adlı fonksiyona tahmin sayi ve sayı2 değerlerinin gönderilmesi ve ana döngüden gelen sonucun alınması
+
+        if (sonuc1 == "Kazandınız"):    ## Eğer ana döngüden kazandınız bilgisi gelirse çalışacak döngü
+            ilk_oyuncu_deger += 1  ## ilk Oyuncunun değer puanının arttırılması
+            print("\n{} Yeni Puanınız : {}\n".format(ilk_oyuncu,ilk_oyuncu_deger)) ## Oyuncunun güncel puanının oyuncuya aktarımı
+
+        elif (sonuc1 == "Kaybettiniz"): ## Eğer ana döngüden kaybettiniz bilgisi gelirse çalışacak döngü
+            print("\n{} Yeni Puanınız : {}\n".format(ilk_oyuncu,ilk_oyuncu_deger))  ## Oyuncunun güncel puanının oyuncuya aktarımı
+
+        print("\nYarışacak Oyuncu {}\n".format(ikinci_oyuncu))  ## ikinci Yarışacak oyuncunun ismi
+        print("\n{} Şuanki Puanını : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))  ## Oyuncunun güncel puan bilgisi
+        sayi = rand(sayi_secimi)    ## Programın rastgele bir sayı üretmesi için rand fonksiyonunu çağırması
+        sonuc2 = tahmin_oyunu_1(tahmin, sayi, sayi2)    ## Tahmin oyunu 1 adlı fonksiyona tahmin sayi ve sayı2 değerlerinin gönderilmesi ve ana döngüden gelen sonucun alınması
+
+        if (sonuc2 == "Kazandınız"):    ## Eğer ana döngüden kazandınız bilgisi gelirse çalışacak döngü
+            ikinci_oyuncu_deger += 1    ## ikinci Oyuncunun değer puanının arttırılması
+            print("\n{} Yeni Puanınız : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))   ## Oyuncunun güncel puanının oyuncuya aktarımı
+
+        elif (sonuc2 == "Kaybettiniz"): ## Eğer ana döngüden kaybettiniz bilgisi gelirse çalışacak döngü
+            print("\n{} Yeni Puanınız : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))   ## Oyuncunun güncel puanının oyuncuya aktarımı
+
+    if (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger == sonuc):    ## birinci ve ikinci oyuncu aynı skor ile oyunu bitirmişse oynayacak olan döngü
+        print("\nİki Oyuncuyada Tebrikler Oyun Berabere Bitmiştir") ## Oyuncuların ikisininde kazandığı bilgisi
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger != sonuc):  ## Birinci oyuncu oyunu bitirmişse oynayacak olan döngğ
+        print("\nTebrikler {} Oyunu Kazandınız".format(ilk_oyuncu)) ## Bİrinci oyuncunun kazandığı bilgisi
+
+    elif (ikinci_oyuncu_deger == sonuc and ilk_oyuncu_deger != sonuc):  ## İkinci oyuncu oyunu bitirmişse oynayacak olan döngü
+        print("\nTebrikler {} Oyunu Kazandınız".format(ikinci_oyuncu))  ## İkinci oyuncunun kazandığı bilgisi
+
+if (oyuncu == "3"): ## Eğer oyuncu sayısı 3 ise oynayacak olan döngü, birinci döngü ile adımlar aynı sadece ilave bir kullanıcı daha eklenmiş durumda
+
+    while(ilk_oyuncu_deger < sonuc and ikinci_oyuncu_deger < sonuc and ucuncu_oyuncu_deger < sonuc):
+
+        print("Yarışacak Oyunuc :",ilk_oyuncu)
+        print("\n{} Şuanki Puanını : {}\n".format(ilk_oyuncu,ilk_oyuncu_deger))
+        sayi = rand(sayi_secimi)
+        sonuc1 = tahmin_oyunu_1(tahmin,sayi,sayi2)
+
+        if (sonuc1 == "Kazandınız"):
+            ilk_oyuncu_deger += 1
+            print("\n{} Yeni Puanınız : {}\n".format(ilk_oyuncu,ilk_oyuncu_deger))
+
+        elif (sonuc1 == "Kaybettiniz"):
+            print("\n{} Yeni Puanınız : {}\n".format(ilk_oyuncu,ilk_oyuncu_deger))
+
+        print("\nYarışacak Oyuncu {}\n".format(ikinci_oyuncu))
+        print("\n{} Şuanki Puanını : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))
+        sayi = rand(sayi_secimi)
+        sonuc2 = tahmin_oyunu_1(tahmin, sayi, sayi2)
+
+        if (sonuc2 == "Kazandınız"):
+            ikinci_oyuncu_deger += 1
+            print("\n{} Yeni Puanınız : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))
+
+        elif (sonuc2 == "Kaybettiniz"):
+            print("\n{} Yeni Puanınız : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))
+
+        print("\nYarışacak Oyuncu {}\n".format(ucuncu_oyuncu))
+        print("\n{} Şuanki Puanını : {}\n".format(ucuncu_oyuncu, ucuncu_oyuncu_deger))
+        sayi = rand(sayi_secimi)
+        sonuc2 = tahmin_oyunu_1(tahmin, sayi, sayi2)
+
+        if (sonuc2 == "Kazandınız"):
+            ucuncu_oyuncu_deger += 1
+            print("\n{} Yeni Puanınız : {}\n".format(ucuncu_oyuncu, ucuncu_oyuncu_deger))
+
+        elif (sonuc2 == "Kaybettiniz"):
+            print("\n{} Yeni Puanınız : {}\n".format(ucuncu_oyuncu, ucuncu_oyuncu_deger))
+
+    if (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger == sonuc):
+        print("\nÜç Oyuncuyada Tebrikler Oyun Berabere Bitmiştir")
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger != sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler",format(ilk_oyuncu,ikinci_oyuncu))
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger == sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler",format(ilk_oyuncu,ucuncu_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger == sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler",format(ikinci_oyuncu,ucuncu_oyuncu))
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger != sonuc):
+        print("\n{} Oyunu Kazanmıştır. Tebrikler",format(ilk_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger != sonuc):
+        print("\n{} Oyunu Kazanmıştır. Tebrikler",format(ikinci_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger == sonuc):
+        print("\n{} Oyunu Kazanmıştır. Tebrikler",format(ucuncu_oyuncu))
+
+if (oyuncu == "4"): ## Eğer oyuncu sayısı 4 ise oynayacak olan döngü, birinci döngü ile adımlar aynı sadece ilave iki kullanıcı daha eklenmiş durumda
+
+    while (ilk_oyuncu_deger < sonuc and ikinci_oyuncu_deger < sonuc and ucuncu_oyuncu_deger < sonuc and dorduncu_oyuncu_deger < sonuc):
+
+        print("Yarışacak Oyunuc :", ilk_oyuncu)
+        print("\n{} Şuanki Puanını : {}\n".format(ilk_oyuncu, ilk_oyuncu_deger))
+        sayi = rand(sayi_secimi)
+        sonuc1 = tahmin_oyunu_1(tahmin, sayi, sayi2)
+
+        if (sonuc1 == "Kazandınız"):
+            ilk_oyuncu_deger += 1
+            print("\n{} Yeni Puanınız : {}\n".format(ilk_oyuncu, ilk_oyuncu_deger))
+
+        elif (sonuc1 == "Kaybettiniz"):
+            print("\n{} Yeni Puanınız : {}\n".format(ilk_oyuncu, ilk_oyuncu_deger))
+
+        print("\nYarışacak Oyuncu {}\n".format(ikinci_oyuncu))
+        print("\n{} Şuanki Puanını : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))
+        sayi = rand(sayi_secimi)
+        sonuc2 = tahmin_oyunu_1(tahmin, sayi, sayi2)
+
+        if (sonuc2 == "Kazandınız"):
+            ikinci_oyuncu_deger += 1
+            print("\n{} Yeni Puanınız : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))
+
+        elif (sonuc2 == "Kaybettiniz"):
+            print("\n{} Yeni Puanınız : {}\n".format(ikinci_oyuncu, ikinci_oyuncu_deger))
+
+        print("\nYarışacak Oyuncu {}\n".format(ucuncu_oyuncu))
+        print("\n{} Şuanki Puanını : {}\n".format(ucuncu_oyuncu, ucuncu_oyuncu_deger))
+        sayi = rand(sayi_secimi)
+        sonuc2 = tahmin_oyunu_1(tahmin, sayi, sayi2)
+
+        if (sonuc2 == "Kazandınız"):
+            ucuncu_oyuncu_deger += 1
+            print("\n{} Yeni Puanınız : {}\n".format(ucuncu_oyuncu, ucuncu_oyuncu_deger))
+
+        elif (sonuc2 == "Kaybettiniz"):
+            print("\n{} Yeni Puanınız : {}\n".format(ucuncu_oyuncu, ucuncu_oyuncu_deger))
+
+        print("\nYarışacak Oyuncu {}\n".format(dorduncu_oyuncu))
+        print("\n{} Şuanki Puanını : {}\n".format(dorduncu_oyuncu, dorduncu_oyuncu_deger))
+        sayi = rand(sayi_secimi)
+        sonuc2 = tahmin_oyunu_1(tahmin, sayi, sayi2)
+
+        if (sonuc2 == "Kazandınız"):
+            dorduncu_oyuncu_deger += 1
+            print("\n{} Yeni Puanınız : {}\n".format(dorduncu_oyuncu, dorduncu_oyuncu_deger))
+
+        elif (sonuc2 == "Kaybettiniz"):
+            print("\n{} Yeni Puanınız : {}\n".format(dorduncu_oyuncu, dorduncu_oyuncu_deger))
+
+    if (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger == sonuc and dorduncu_oyuncu_deger == sonuc):
+        print("\nDört Oyuncuyada Tebrikler Oyun Berabere Bitmiştir")
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger == sonuc and dorduncu_oyuncu_deger != sonuc):
+        print("\n{}, {} ve {} Oyunu Kazanmıştır. Tebrikler", format(ilk_oyuncu, ikinci_oyuncu, dorduncu_oyuncu))
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger != sonuc and dorduncu_oyuncu_deger == sonuc):
+        print("\n{}, {} ve {} Oyunu Kazanmıştır. Tebrikler", format(ilk_oyuncu, ikinci_oyuncu, dorduncu_oyuncu))
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger == sonuc and dorduncu_oyuncu_deger == sonuc):
+        print("\n{}, {} ve {} Oyunu Kazanmıştır. Tebrikler", format(ilk_oyuncu, ucuncu_oyuncu, dorduncu_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger == sonuc and dorduncu_oyuncu_deger == sonuc):
+        print("\n{}, {} ve {} Oyunu Kazanmıştır. Tebrikler", format(ikinci_oyuncu, ucuncu_oyuncu, dorduncu_oyuncu))
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger != sonuc and dorduncu_oyuncu_deger != sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler", format(ilk_oyuncu, ikinci_oyuncu))
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger == sonuc and dorduncu_oyuncu_deger != sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler", format(ilk_oyuncu, ucuncu_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger == sonuc and dorduncu_oyuncu_deger != sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler", format(ikinci_oyuncu, ucuncu_oyuncu))
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger != sonuc and dorduncu_oyuncu_deger == sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler", format(ilk_oyuncu, dorduncu_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger != sonuc and dorduncu_oyuncu_deger == sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler", format(ikinci_oyuncu, dorduncu_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger == sonuc and dorduncu_oyuncu_deger == sonuc):
+        print("\n{} ve {} Oyunu Kazanmıştır. Tebrikler", format(ucuncu_oyuncu, dorduncu_oyuncu))
+
+    elif (ilk_oyuncu_deger == sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger != sonuc and dorduncu_oyuncu_deger != sonuc):
+        print("\n{} Oyunu Kazanmıştır. Tebrikler", format(ilk_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger == sonuc and ucuncu_oyuncu_deger != sonuc and dorduncu_oyuncu_deger != sonuc):
+        print("\n{} Oyunu Kazanmıştır. Tebrikler", format(ikinci_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger == sonuc and dorduncu_oyuncu_deger != sonuc):
+        print("\n{} Oyunu Kazanmıştır. Tebrikler", format(ucuncu_oyuncu))
+
+    elif (ilk_oyuncu_deger != sonuc and ikinci_oyuncu_deger != sonuc and ucuncu_oyuncu_deger != sonuc and dorduncu_oyuncu_deger == sonuc):
+        print("\n{} Oyunu Kazanmıştır. Tebrikler", format(dorduncu_oyuncu))
